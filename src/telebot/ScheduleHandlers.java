@@ -1,7 +1,6 @@
 package telebot;
 
 
-import org.telegram.services.BotLogger;
 import org.telegram.telegrambots.TelegramApiException;
 import org.telegram.telegrambots.api.methods.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
@@ -24,7 +23,7 @@ public class ScheduleHandlers extends TelegramLongPollingBot {
 
 
 
-    @Override
+    
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
         
@@ -41,7 +40,7 @@ public class ScheduleHandlers extends TelegramLongPollingBot {
     }
 
 
-    @Override
+    
     public String getBotUsername() {
         return BotConfig.USERNAMESCHEDULE;
     }
@@ -80,7 +79,7 @@ public class ScheduleHandlers extends TelegramLongPollingBot {
         try {
             sendMessage(sendMessage);
         } catch (TelegramApiException e) {
-            BotLogger.error(LOGTAG, e);
+            System.out.println("Ошибка");;
         }
     }
     
